@@ -451,6 +451,7 @@ proxy-groups:
   - { name: 📺 GlobalMedia, type: select, proxies: [🚀 Proxy, 🎯 Direct, {{ $proxyNames }}] }
   - { name: 📟 Telegram, type: select, proxies: [🚀 Proxy, 🎯 Direct, {{ $proxyNames }}] }
   - { name: 🤖 AI, type: select, proxies: [🚀 Proxy, 🎯 Direct, {{ $proxyNames }}] }
+  - { name: 📽️ Emby, type: select, proxies: [🚀 Proxy, 🎯 Direct, {{ $proxyNames }}] }
   - { name: 🪙 Crypto, type: select, proxies: [🚀 Proxy, 🎯 Direct, {{ $proxyNames }}] }
   - { name: 🎮 Game, type: select, proxies: [🚀 Proxy, 🎯 Direct, {{ $proxyNames }}] }
   - { name: 🇨🇳 China, type: select, proxies: [🎯 Direct, 🚀 Proxy, {{ $proxyNames }}] }
@@ -473,6 +474,7 @@ rules:
   - RULE-SET, Gemini, 🤖 AI
   - RULE-SET, Copilot, 🤖 AI
   - RULE-SET, Claude, 🤖 AI
+  - RULE-SET, Emby, 📽️ Emby
   - RULE-SET, Crypto, 🪙 Crypto
   - RULE-SET, Cryptocurrency, 🪙 Crypto
   - RULE-SET, Game, 🎮 Game
@@ -566,6 +568,12 @@ rule-providers:
     behavior: classical
     format: yaml
     url: https://cdn.jsdmirror.com/gh/perfect-panel/rules/rule/Clash/Claude/Claude.yaml
+    interval: 86400
+  Emby:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/zzzeeen/rules@main/prule/emby_direct/emby_direct.yaml
     interval: 86400
   Crypto:
     type: http
